@@ -12,11 +12,35 @@ A simple CLI wrapper for [home-manager](https://github.com/nix-community/home-ma
 - [home-manager](https://github.com/nix-community/home-manager)
 - [nixpkgs](https://github.com/NixOS/nixpkgs) - the package repository used by Nix
 
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/home.git
+cd home
+
+# Install V if not already installed
+make setup
+
+# Build the binary
+make build
+
+# Install to PATH
+make install
+```
+
 ## Usage
 
 ```bash
-# Run home-manager switch to apply your configuration
+# Apply your configuration
 home reload
+
+# List generations
+home list
+
+# Show help
+home -h
+home <command> -h
 ```
 
 ## License
