@@ -1,6 +1,6 @@
 module main
 
-import core { HomeCommandResult, clean_cmd, list_cmd, reload_cmd }
+import core { HomeCommandResult, list_cmd, reload_cmd }
 import os
 import cli
 
@@ -10,7 +10,6 @@ fn main() {
 	mut subcommands := [
 		reload_cmd(mut result),
 		list_cmd(mut result),
-		clean_cmd(mut result),
 	]
 
 	mut app := cli.Command{

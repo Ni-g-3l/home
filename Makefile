@@ -1,17 +1,19 @@
-.PHONY: setup build update install
+.PHONY: setup build test update install
 
 BINARY_NAME=home
-HOME_REPO_DIR=./home-repo
 
 setup:
 	@curl -fsSL https://raw.githubusercontent.com/vlang/v/master/install.sh | bash -s
-	@git clone https://github.com/nix-community/home-manager.git $(HOME_REPO_DIR)
+	@git clone git@github.com:Ni-g-3l/home.git
 
 build:
-	@v build -o $(BINARY_NAME) .
+	@v . -o $(BINARY_NAME)
+
+test:
+	@v test .
 
 update:
-	@cd $(HOME_REPO_DIR) && git pull
+	@git pull
 
 install: build
 	@mv $(BINARY_NAME) ~/.local/bin/$(BINARY_NAME)
